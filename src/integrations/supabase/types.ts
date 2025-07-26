@@ -50,6 +50,54 @@ export type Database = {
         }
         Relationships: []
       }
+      ai_matchmaker_applications: {
+        Row: {
+          ai_analysis: Json | null
+          created_at: string
+          email: string
+          id: string
+          interest: string
+          match_score: number | null
+          matched_opportunities: Json | null
+          name: string
+          organization: string | null
+          selected_option: string
+          status: string | null
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          ai_analysis?: Json | null
+          created_at?: string
+          email: string
+          id?: string
+          interest: string
+          match_score?: number | null
+          matched_opportunities?: Json | null
+          name: string
+          organization?: string | null
+          selected_option: string
+          status?: string | null
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          ai_analysis?: Json | null
+          created_at?: string
+          email?: string
+          id?: string
+          interest?: string
+          match_score?: number | null
+          matched_opportunities?: Json | null
+          name?: string
+          organization?: string | null
+          selected_option?: string
+          status?: string | null
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       ai_models: {
         Row: {
           accuracy_score: number | null
@@ -2935,6 +2983,63 @@ export type Database = {
           title?: string
           type?: string | null
           user_id?: string
+        }
+        Relationships: []
+      }
+      opportunities: {
+        Row: {
+          benefits: Json | null
+          budget_range: string | null
+          commitment_level: string | null
+          contact_info: Json | null
+          created_at: string
+          created_by: string | null
+          description: string
+          id: string
+          is_active: boolean | null
+          location: string | null
+          opportunity_type: string
+          requirements: Json | null
+          tags: string[] | null
+          timeline: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          benefits?: Json | null
+          budget_range?: string | null
+          commitment_level?: string | null
+          contact_info?: Json | null
+          created_at?: string
+          created_by?: string | null
+          description: string
+          id?: string
+          is_active?: boolean | null
+          location?: string | null
+          opportunity_type: string
+          requirements?: Json | null
+          tags?: string[] | null
+          timeline?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          benefits?: Json | null
+          budget_range?: string | null
+          commitment_level?: string | null
+          contact_info?: Json | null
+          created_at?: string
+          created_by?: string | null
+          description?: string
+          id?: string
+          is_active?: boolean | null
+          location?: string | null
+          opportunity_type?: string
+          requirements?: Json | null
+          tags?: string[] | null
+          timeline?: string | null
+          title?: string
+          updated_at?: string
         }
         Relationships: []
       }

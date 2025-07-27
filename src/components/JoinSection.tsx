@@ -12,6 +12,7 @@ import {
   Building
 } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const joinOptions = [
   {
@@ -54,6 +55,7 @@ const JoinSection = () => {
     organization: "",
     interest: ""
   });
+  const navigate = useNavigate();
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -123,10 +125,11 @@ const JoinSection = () => {
                     ))}
                   </div>
 
-                  {isSelected && (
+                    {isSelected && (
                     <Button 
                       variant={option.color === 'neon' ? 'neon' : 'consciousness'} 
                       className="w-full group animate-fade-in"
+                      onClick={() => navigate('/auth')}
                     >
                       {option.cta}
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -210,6 +213,7 @@ const JoinSection = () => {
                 size="lg" 
                 className="w-full group"
                 disabled={!formData.name || !formData.email}
+                onClick={() => navigate('/auth')}
               >
                 <Lightbulb className="w-5 h-5" />
                 Connect with Our AI Matchmaker

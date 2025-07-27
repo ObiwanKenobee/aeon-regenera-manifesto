@@ -255,6 +255,16 @@ const Dashboard = () => {
                     <Button 
                       variant={workspace.color === 'neon' ? 'neon' : 'consciousness'} 
                       className="w-full group"
+                      onClick={() => {
+                        if (workspace.id === 'ecosystem') {
+                          navigate('/workspace/ecosystem');
+                        } else {
+                          toast({
+                            title: "Coming Soon",
+                            description: `${workspace.title} workspace is being developed.`,
+                          });
+                        }
+                      }}
                     >
                       Enter Workspace
                       <Network className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform" />
